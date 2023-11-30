@@ -10,9 +10,6 @@ export default function RoiCalculator() {
     const [timeFrame,setTimeFrame] = useState(1);
     const [amount,setAmount] = useState(0);
     const randomAmounts = [1000, 100];
-    const amountHtml = randomAmounts.map((randomAmount)=>{
-        return  <Button key={randomAmount} type='button' size="sm" onClick={()=>updateAmountHandler(randomAmount)} className="rounded btn-light text-muted fw-bold me-1 px-4 py-1 ">${randomAmount}</Button>  
-    })
     const periods = [
         {
             label: "1 Day",
@@ -31,7 +28,7 @@ export default function RoiCalculator() {
             value: 365
         },
         {
-            label: "5 Year",
+            label: "5 Years",
             value: 1825
         }
 
@@ -59,11 +56,13 @@ export default function RoiCalculator() {
         }
     ]
     const tierHtml = tiers.map((singleTier)=>{
-         return <Button key={singleTier.value} size="sm" type="button" onClick={()=> tierValueHandler(singleTier.value)} className="rounded-pill btn-light text-muted fw-bold me-1 px-4" active={tierValue===singleTier.value}>{singleTier.label}</Button>
+         return <Button key={singleTier.value} size="sm" type="button" onClick={()=> tierValueHandler(singleTier.value)} className="rounded-pill btn-light text-muted fs-7 fw-bold me-1 px-4" active={tierValue===singleTier.value}>{singleTier.label}</Button>
     })
     const periodHTMl = periods.map((period)=>{
-        return <Button key={period.value} size="sm" type="button" onClick={()=> frameValueHandler(period.value)}  className="rounded-pill btn-light text-muted fw-bold me-1 px-4" active={timeFrame === period.value}>{period.label}</Button>
-        
+        return <Button key={period.value} size="sm" type="button" onClick={()=> frameValueHandler(period.value)}  className="rounded-pill btn-light text-muted fw-bold fs-7 me-1 px-4" active={timeFrame === period.value}>{period.label}</Button>  
+    })
+    const amountHtml = randomAmounts.map((randomAmount)=>{
+        return  <Button key={randomAmount} type='button' size="sm" onClick={()=>updateAmountHandler(randomAmount)} className="rounded btn-light text-muted fw-bold me-1 px-4 py-1 fs-7">${randomAmount}</Button>  
     })
 
     function showContentHandler() {

@@ -3,7 +3,7 @@ import "./App.css";
 import RoiCalculator from './RoiCalculator.jsx';
 export default function App () {
   return (
-    <div className="mt-5">
+    <div className="mt-4 container-fluid">
       <RoiCalculator/>
     </div>
   );
