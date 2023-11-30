@@ -92,13 +92,9 @@ export default function RoiCalculator() {
             setAmount(0);
         }
     }
-    function calculateFutureValue(presentValue, interestRate, period) {
+    function calculateFutureValue(presentValue, interestRate, totalDays) {
         const r = interestRate / 100;
-        const days = period % 30; 
-        const months = Math.floor(period / 30) % 12;
-        const years = Math.floor(period / 365);
-        const totalDays = days + (months * 30) + (years * 365);
-        const futureValue = presentValue * Math.pow(1 + r, totalDays / 365);
+        const futureValue = presentValue * Math.pow(1 + r, totalDays/365);
         return futureValue.toFixed(2);
     }
     let futureValue = 0;
