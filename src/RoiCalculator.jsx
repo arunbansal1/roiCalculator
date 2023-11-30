@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { TfiClose } from "react-icons/tfi";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
@@ -60,10 +59,10 @@ export default function RoiCalculator() {
         }
     ]
     const tierHtml = tiers.map((singleTier)=>{
-         return <Button key={singleTier.value} size="sm" type="button" onClick={()=> tierValueHandler(singleTier.value)} className="rounded-pill btn-light text-muted fw-bold me-1 px-4" active={tierValue== singleTier.value}>{singleTier.label}</Button>
+         return <Button key={singleTier.value} size="sm" type="button" onClick={()=> tierValueHandler(singleTier.value)} className="rounded-pill btn-light text-muted fw-bold me-1 px-4" active={tierValue===singleTier.value}>{singleTier.label}</Button>
     })
     const periodHTMl = periods.map((period)=>{
-        return <Button key={period.value} size="sm" type="button" onClick={()=> frameValueHandler(period.value)}  className="rounded-pill btn-light text-muted fw-bold me-1 px-4" active={timeFrame == period.value}>{period.label}</Button>
+        return <Button key={period.value} size="sm" type="button" onClick={()=> frameValueHandler(period.value)}  className="rounded-pill btn-light text-muted fw-bold me-1 px-4" active={timeFrame === period.value}>{period.label}</Button>
         
     })
 
