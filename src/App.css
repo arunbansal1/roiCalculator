@@ -1,0 +1,26 @@
+.calculator{
+  max-width: 500px;
+  margin: 0 auto;
+  border: thin solid gray;
+  border-radius: 10px;
+  padding: 15px;
+}
+.fs-7{
+  font-size:12px;
+}
+.btn-light{
+  color: #aaa !important;
+}
+.btn-light:hover, .btn-light.active{
+  background-color: #f0c643;
+  border-color: #f0c643;
+  color: #333 !important;
+}
+
+.switch-light.form-check-input:checked {
+  background-color: #f0c643;
+  border-color: #f0c643;
+}
+.text-gold{
+  color: #f0c643;
+}
